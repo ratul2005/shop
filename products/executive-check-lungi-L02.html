@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Executive Check Lungi - Ratul's Shop</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="main-header">
+        <nav class="navbar">
+            <a href="../index.html" class="logo-container"><img src="https://placehold.co/50x50/EBF4F5/1B4965?text=R" alt="Ratul's Shop Logo" class="logo-img"><span class="logo-text">Ratul's Shop</span></a>
+            <ul class="nav-links-desktop">
+                <li><a href="../index.html">Home</a></li><li><a href="../categories.html" class="active">Shop</a></li><li><a href="../about.html">About Us</a></li><li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+            <div class="nav-actions">
+                 <button id="search-toggle" class="nav-icon-btn"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></button>
+                 <a href="../cart.html" class="nav-icon-btn cart-btn"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg><span class="cart-count">0</span></a>
+                 <button id="theme-toggle" class="theme-toggle-btn"><svg id="theme-toggle-dark-icon" class="toggle-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg><svg id="theme-toggle-light-icon" class="toggle-icon" style="display: none;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg></button>
+                 <button class="mobile-menu-toggle"><div class="hamburger-line"></div><div class="hamburger-line"></div><div class="hamburger-line"></div></button>
+            </div>
+        </nav>
+    </header>
+    <div id="search-overlay" class="search-overlay"><button id="close-search" class="close-search-btn">&times;</button><div class="search-bar-container"><input type="text" id="search-input" placeholder="Search..."></div></div>
+    <div class="mobile-nav-menu"><ul class="nav-links-mobile"><li><a href="../index.html">Home</a></li><li><a href="../categories.html">Shop</a></li><li><a href="../about.html">About Us</a></li><li><a href="../contact.html">Contact Us</a></li></ul></div>
+    <main>
+        <section class="product-details-section">
+            <div class="product-details-container">
+                <div class="product-gallery"><div class="main-image"><img src="https://placehold.co/600x800/36454f/ffffff?text=Check+Lungi" alt="Executive Check Lungi"></div></div>
+                <div class="product-info">
+                    <h1 class="product-title">Executive Check Lungi</h1>
+                    <p class="product-code">Product Code: RS-L02</p>
+                    <div class="product-price-box"><span class="current-price">Tk. 3,000</span></div>
+                    <p class="product-description">A sophisticated choice for the modern man. This lungi features a classic checkered pattern in subtle colors, woven from a fine cotton blend for durability and a crisp feel.</p>
+                    <div class="product-actions">
+                        <div class="quantity-selector"><label for="quantity">Quantity:</label><input type="number" id="quantity" name="quantity" value="1" min="1" max="10"></div>
+                        <button class="btn btn-primary add-to-cart-btn">Add to Cart</button>
+                    </div>
+                    <div class="product-accordion">
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">Product Details</h3>
+                            <div class="accordion-content"><p><strong>Fabric:</strong> Cotton Blend</p><p><strong>Type:</strong> Stitched</p><p><strong>Length:</strong> 2 meters</p><p><strong>Care:</strong> Machine wash</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div id="notification" class="notification">Item added to cart!</div>
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-section"><h4>Ratul's Shop</h4><p>Your one-stop destination for authentic traditional wear.</p></div>
+            <div class="footer-section"><h4>Quick Links</h4><ul><li><a href="../categories.html">Shop</a></li><li><a href="../about.html">About Us</a></li><li><a href="../contact.html">Contact</a></li></ul></div>
+            <div class="footer-section"><h4>Follow Us</h4><p>Social Media Links Go Here</p></div>
+        </div>
+        <div class="footer-bottom"><p>&copy; 2025 Ratul's Shop. All rights reserved.</p></div>
+    </footer>
+    <script src="js/app.js"></script>
+</body>
+</html>
