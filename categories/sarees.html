@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sarees - Ratul's Shop</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header class="main-header">
+        <nav class="navbar">
+            <a href="../index.html" class="logo-container"><img src="https://placehold.co/50x50/EBF4F5/1B4965?text=R" alt="Ratul's Shop Logo" class="logo-img"><span class="logo-text">Ratul's Shop</span></a>
+            <ul class="nav-links-desktop">
+                <li><a href="../index.html">Home</a></li><li><a href="../categories.html" class="active">Shop</a></li><li><a href="../about.html">About Us</a></li><li><a href="../contact.html">Contact Us</a></li>
+            </ul>
+            <div class="nav-actions">
+                 <button id="search-toggle" class="nav-icon-btn"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></button>
+                 <a href="../cart.html" class="nav-icon-btn cart-btn"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg><span class="cart-count">0</span></a>
+                 <button id="theme-toggle" class="theme-toggle-btn"><svg id="theme-toggle-dark-icon" class="toggle-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg><svg id="theme-toggle-light-icon" class="toggle-icon" style="display: none;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg></button>
+                 <button class="mobile-menu-toggle"><div class="hamburger-line"></div><div class="hamburger-line"></div><div class="hamburger-line"></div></button>
+            </div>
+        </nav>
+    </header>
+    <div id="search-overlay" class="search-overlay">
+        <button id="close-search" class="close-search-btn">&times;</button>
+        <div class="search-bar-container"><input type="text" id="search-input" placeholder="Search for Sarees by name or code..."></div>
+    </div>
+    <div class="mobile-nav-menu">
+        <ul class="nav-links-mobile"><li><a href="../index.html">Home</a></li><li><a href="../categories.html">Shop</a></li><li><a href="../about.html">About Us</a></li><li><a href="../contact.html">Contact Us</a></li></ul>
+    </div>
+    <main>
+        <section class="page-header"><h1>Our Saree Collection</h1><p>Discover a world of elegance, from traditional silks to modern georgettes.</p></section>
+        <section class="product-listing">
+             <div class="product-controls">
+                <div class="filter-group"><label for="filter-discount">Filter by:</label><select id="filter-discount"><option value="all">All Sarees</option><option value="discount">On Discount</option></select></div>
+                <div class="sort-group"><label for="sort-price">Sort by:</label><select id="sort-price"><option value="default">Default</option><option value="price-asc">Price: Low to High</option><option value="price-desc">Price: High to Low</option></select></div>
+            </div>
+            <div class="product-grid" id="product-grid">
+                <a href="../products/royal-red-silk-saree-S01.html" class="product-item" data-price="12500" data-code="RS-S01" data-discount="false"><div class="product-img-placeholder"></div><h4>Royal Red Silk Saree</h4><p class="price">Tk. 12,500</p></a>
+                <a href="../products/heirloom-jamdani-saree-S02.html" class="product-item" data-price="22000" data-code="RS-S02" data-discount="true"><div class="product-img-placeholder"><span class="discount-badge">10% OFF</span></div><h4>Heirloom Jamdani Saree</h4><p class="price"><del>Tk. 24,200</del> Tk. 22,000</p></a>
+                <a href="../products/emerald-green-georgette-S03.html" class="product-item" data-price="9800" data-code="RS-S03" data-discount="false"><div class="product-img-placeholder"></div><h4>Emerald Green Georgette</h4><p class="price">Tk. 9,800</p></a>
+                <a href="#" class="product-item" data-price="15500" data-code="RS-S04" data-discount="false"><div class="product-img-placeholder"></div><h4>Midnight Blue Katan</h4><p class="price">Tk. 15,500</p></a>
+                <a href="#" class="product-item" data-price="7500" data-code="RS-S05" data-discount="false"><div class="product-img-placeholder"></div><h4>Classic White Tant Saree</h4><p class="price">Tk. 7,500</p></a>
+                <a href="#" class="product-item" data-price="18000" data-code="RS-S06" data-discount="true"><div class="product-img-placeholder"><span class="discount-badge">20% OFF</span></div><h4>Golden Zari Banarasi</h4><p class="price"><del>Tk. 22,500</del> Tk. 18,000</p></a>
+                <a href="#" class="product-item" data-price="11200" data-code="RS-S07" data-discount="false"><div class="product-img-placeholder"></div><h4>Pastel Pink Organza</h4><p class="price">Tk. 11,200</p></a>
+                <a href="#" class="product-item" data-price="8900" data-code="RS-S08" data-discount="false"><div class="product-img-placeholder"></div><h4>Floral Printed Crepe Saree</h4><p class="price">Tk. 8,900</p></a>
+            </div>
+        </section>
+    </main>
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-section"><h4>Ratul's Shop</h4><p>Your one-stop destination for authentic traditional wear.</p></div>
+            <div class="footer-section"><h4>Quick Links</h4><ul><li><a href="../categories.html">Shop</a></li><li><a href="../about.html">About Us</a></li><li><a href="../contact.html">Contact</a></li></ul></div>
+            <div class="footer-section"><h4>Follow Us</h4><p>Social Media Links Go Here</p></div>
+        </div>
+        <div class="footer-bottom"><p>&copy; 2025 Ratul's Shop. All rights reserved.</p></div>
+    </footer>
+    <script src="../app.js"></script>
+</body>
+</html>
+
