@@ -4,16 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Collections - Ratul's Shop</title>
-    <!-- Google Fonts Import: Playfair Display for headings, Lato for body -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-    <!-- Main Stylesheet -->
     <link rel="stylesheet" href="css/style.css">
+    <script>
+        document.addEventListener('contextmenu', event => event.preventDefault());
+        document.onkeydown = function (e) {
+            if (e.keyCode == 123) {
+                return false;
+            }
+            if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+                return false;
+            }
+            if (e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
+                return false;
+            }
+            if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+                return false;
+            }
+            if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+                return false;
+            }
+        }
+    </script>
 </head>
-<body>
+<body ondragstart="return false" onselectstart="return false">
 
-    <!-- ======== HEADER & NAVIGATION (Reused from other pages) ======== -->
     <header class="main-header">
         <nav class="navbar">
             <a href="index.html" class="logo-container">
@@ -33,7 +50,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
                  </button>
                  <a href="cart.html" class="nav-icon-btn cart-btn">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
                     <span class="cart-count">0</span>
                  </a>
                  <button id="theme-toggle" class="theme-toggle-btn">
@@ -47,7 +64,6 @@
         </nav>
     </header>
 
-    <!-- ======== SEARCH OVERLAY (Needed for JS) ======== -->
     <div id="search-overlay" class="search-overlay">
         <button id="close-search" class="close-search-btn">&times;</button>
         <div class="search-bar-container">
@@ -55,7 +71,6 @@
         </div>
     </div>
 
-    <!-- ======== MOBILE NAVIGATION MENU (Needed for JS) ======== -->
     <div class="mobile-nav-menu">
         <ul class="nav-links-mobile">
             <li><a href="index.html">Home</a></li><li><a href="categories.html">Shop</a></li><li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact Us</a></li>
@@ -63,13 +78,11 @@
     </div>
 
     <main>
-        <!-- Page Header -->
         <section class="page-header">
             <h1>Our Collections</h1>
             <p>Select a category to start browsing our exquisite products.</p>
         </section>
 
-        <!-- The Category Showcase Section -->
         <section class="category-showcase">
             <div class="category-grid">
                 <a href="categories/sarees.html" class="category-card">
@@ -84,7 +97,6 @@
         </section>
     </main>
 
-    <!-- ======== FOOTER (Reused from other pages) ======== -->
     <footer class="main-footer">
         <div class="footer-content">
             <div class="footer-section"><h4>Ratul's Shop</h4><p>Your one-stop destination for authentic traditional wear.</p></div>
@@ -94,8 +106,6 @@
         <div class="footer-bottom"><p>&copy; 2025 Ratul's Shop. All rights reserved.</p></div>
     </footer>
 
-    <!-- All scripts are still needed for the header to work -->
     <script src="js/app.js"></script>
 </body>
 </html>
-
