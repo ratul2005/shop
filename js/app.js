@@ -1,9 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // --- GLOBAL SCOPE VARIABLES & FUNCTIONS ---
     const cartCountElement = document.querySelector('.cart-btn .cart-count');
 
-    // Function to update the cart count in the header
     const updateCartCount = () => {
         const cart = JSON.parse(localStorage.getItem('ratulsShopCart')) || [];
         const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
@@ -12,7 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // --- THEME TOGGLE LOGIC (No changes) ---
     const themeToggleButton = document.getElementById('theme-toggle');
     if (themeToggleButton) {
         const darkIcon = document.getElementById('theme-toggle-dark-icon');
@@ -43,7 +40,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- MOBILE MENU & HEADER LOGIC (No changes) ---
     const menuToggle = document.querySelector('.mobile-menu-toggle');
     if (menuToggle) {
         const mobileNav = document.querySelector('.mobile-nav-menu');
@@ -65,7 +61,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     
-    // --- SEARCH LOGIC (No changes) ---
     const searchToggle = document.getElementById('search-toggle');
     const searchOverlay = document.getElementById('search-overlay');
     if (searchToggle) {
@@ -78,7 +73,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- PRODUCT PAGE LOGIC ---
     const addToCartButton = document.querySelector('.add-to-cart-btn');
     if (addToCartButton) {
         addToCartButton.addEventListener('click', () => {
@@ -102,7 +96,6 @@ document.addEventListener('DOMContentLoaded', () => {
             localStorage.setItem('ratulsShopCart', JSON.stringify(cart));
             updateCartCount();
 
-            // Show notification
             const notification = document.getElementById('notification');
             notification.classList.add('show');
             setTimeout(() => {
@@ -112,7 +105,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    // --- CART PAGE LOGIC ---
     if (document.querySelector('.cart-section')) {
         const cartItemsContainer = document.getElementById('cart-items-container');
         const emptyCartMessage = document.getElementById('cart-empty-message');
@@ -127,18 +119,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const couponFeedback = document.getElementById('coupon-feedback');
         const confirmOrderBtn = document.getElementById('confirm-order-btn');
 
-        // --- START: COUPON CONFIGURATION ---
-        // Guide: To add more coupons, simply add a new entry to this object.
-        // 'CODE': { type: 'percent' or 'fixed', value: number }
-        // 'percent': value is the percentage off (e.g., 10 for 10%).
-        // 'fixed': value is a fixed amount off in Tk. (e.g., 500 for Tk. 500 off).
         const coupons = {
             'EID20': { type: 'percent', value: 20 },
             'RATUL500': { type: 'fixed', value: 500 },
             'RATUL50': { type: 'percent', value: 50 },
-            'FREESHIP': { type: 'delivery', value: 0 } // Special type for free delivery
+            'FREESHIP': { type: 'delivery', value: 0 }
         };
-        // --- END: COUPON CONFIGURATION ---
 
         let appliedCoupon = null;
 
@@ -255,17 +241,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
         confirmOrderBtn.addEventListener('click', () => {
             const name = document.getElementById('customer-name').value.trim();
-            const address = document.getElementById('customer-address').value.trim();
-            const phone = document.getElementById('customer-phone').value.trim();
 
-            if (!name || !address || !phone) {
-                alert('Please fill in all delivery details.');
+            if (!name) {
+                alert('Please fill in your name.');
                 return;
             }
 
             const cart = JSON.parse(localStorage.getItem('ratulsShopCart')) || [];
             let message = "New Order from Ratul's Shop:\n\n";
-            message += `*Customer Details:*\nName: ${name}\nAddress: ${address}\nPhone: ${phone}\n\n`;
+            message += `*Customer Name:*\n ${name}\n\n`;
             message += "*Order Items:*\n";
             cart.forEach(item => {
                 message += `- ${item.title} (Code: ${item.id})\n  Quantity: ${item.quantity}\n  Price: Tk. ${(item.price * item.quantity).toLocaleString()}\n`;
@@ -280,7 +264,6 @@ document.addEventListener('DOMContentLoaded', () => {
             
             const whatsappUrl = `https://wa.me/8801302869008?text=${encodeURIComponent(message)}`;
             
-            // Clear cart and redirect
             localStorage.removeItem('ratulsShopCart');
             window.location.href = whatsappUrl;
         });
@@ -288,11 +271,8 @@ document.addEventListener('DOMContentLoaded', () => {
         renderCart();
     }
 
-    // --- PRODUCT LISTING PAGE (Filter/Sort) LOGIC ---
     const productGrid = document.getElementById('product-grid');
     if (productGrid) {
-        // This logic remains the same as your provided file.
-        // It will only run on pages that have a product grid.
         const searchInput = document.getElementById('search-input');
         const products = Array.from(productGrid.querySelectorAll('.product-item'));
         const sortSelect = document.getElementById('sort-price');
@@ -335,7 +315,5 @@ document.addEventListener('DOMContentLoaded', () => {
         if (sortSelect) sortSelect.addEventListener('change', applyFiltersAndSort);
     }
     
-    // Initial cart count update on every page load
     updateCartCount();
 });
-
