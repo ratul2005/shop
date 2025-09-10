@@ -4,16 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ratul's Shop - Premium Sarees and Lungis</title>
-    <!-- Google Fonts Import: Playfair Display for headings, Lato for body -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-    <!-- Main Stylesheet -->
     <link rel="stylesheet" href="css/style.css">
+    <script>
+        document.addEventListener('contextmenu', event => event.preventDefault());
+        document.onkeydown = function (e) {
+            if (e.keyCode == 123) {
+                return false;
+            }
+            if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+                return false;
+            }
+            if (e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
+                return false;
+            }
+            if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+                return false;
+            }
+            if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+                return false;
+            }
+        }
+    </script>
 </head>
-<body>
+<body ondragstart="return false" onselectstart="return false">
 
-    <!-- ======== HEADER & NAVIGATION ======== -->
     <header class="main-header">
         <nav class="navbar">
             <a href="index.html" class="logo-container">
@@ -47,7 +64,6 @@
         </nav>
     </header>
 
-    <!-- ======== SEARCH OVERLAY ======== -->
     <div id="search-overlay" class="search-overlay">
         <button id="close-search" class="close-search-btn">&times;</button>
         <div class="search-bar-container">
@@ -55,7 +71,6 @@
         </div>
     </div>
 
-    <!-- ======== MOBILE NAVIGATION MENU ======== -->
     <div class="mobile-nav-menu">
         <ul class="nav-links-mobile">
             <li><a href="index.html">Home</a></li><li><a href="categories.html">Shop</a></li><li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact Us</a></li>
@@ -89,10 +104,8 @@
             </div>
         </section>
 
-        <!-- ======== PREMIUM PRODUCTS SECTION ======== -->
         <section class="featured-products">
             <h2>Premium Products</h2>
-            <!-- Filter and Sort Controls -->
             <div class="product-controls">
                 <div class="filter-group">
                     <label for="filter-discount">Filter by:</label>
@@ -112,23 +125,22 @@
             </div>
 
             <div class="product-grid" id="product-grid">
-                <!-- Products now have data attributes for JS filtering -->
-                <a href="products\royal-red-silk-saree-S01.html" class="product-item" data-price="12500" data-code="RS-S01" data-discount="false">
+                <a href="products/royal-red-silk-saree-S01.html" class="product-item" data-price="12500" data-code="RS-S01" data-discount="false">
                     <div class="product-img-placeholder"></div><h4>Royal Red Silk Saree</h4><p class="price">Tk. 12,500</p>
                 </a>
-                <a href="products\azure-cotton-lungi-L01.html" class="product-item" data-price="2500" data-code="RS-L01" data-discount="false">
+                <a href="products/azure-cotton-lungi-L01.html" class="product-item" data-price="2500" data-code="RS-L01" data-discount="false">
                     <div class="product-img-placeholder"></div><h4>Azure Cotton Lungi</h4><p class="price">Tk. 2,500</p>
                 </a>
-                <a href="products\heirloom-jamdani-saree-S02.html" class="product-item" data-price="22000" data-code="RS-S02" data-discount="true">
+                <a href="products/heirloom-jamdani-saree-S02.html" class="product-item" data-price="22000" data-code="RS-S02" data-discount="true">
                     <div class="product-img-placeholder"><span class="discount-badge">10% OFF</span></div><h4>Heirloom Jamdani Saree</h4><p class="price"><del>Tk. 24,200</del> Tk. 22,000</p>
                 </a>
-                <a href="products\executive-check-lungi-L02.html" class="product-item" data-price="3000" data-code="RS-L02" data-discount="false">
+                <a href="products/executive-check-lungi-L02.html" class="product-item" data-price="3000" data-code="RS-L02" data-discount="false">
                     <div class="product-img-placeholder"></div><h4>Executive Check Lungi</h4><p class="price">Tk. 3,000</p>
                 </a>
-                <a href="products\emerald-green-georgette-S03.html" class="product-item" data-price="9800" data-code="RS-S03" data-discount="false">
+                <a href="products/emerald-green-georgette-S03.html" class="product-item" data-price="9800" data-code="RS-S03" data-discount="false">
                     <div class="product-img-placeholder"></div><h4>Emerald Green Georgette</h4><p class="price">Tk. 9,800</p>
                 </a>
-                <a href="products\maroon-batik-lungi-L03.html" class="product-item" data-price="1800" data-code="RS-L03" data-discount="true">
+                <a href="products/maroon-batik-lungi-L03.html" class="product-item" data-price="1800" data-code="RS-L03" data-discount="true">
                     <div class="product-img-placeholder"><span class="discount-badge">15% OFF</span></div><h4>Maroon Batik Lungi</h4><p class="price"><del>Tk. 2,100</del> Tk. 1,800</p>
                 </a>
                  <a href="#" class="product-item" data-price="15500" data-code="RS-S04" data-discount="false">
@@ -153,4 +165,3 @@
     <script src="js/app.js"></script>
 </body>
 </html>
-
